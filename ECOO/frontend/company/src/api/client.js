@@ -1,4 +1,4 @@
-const BASE = import.meta.env.VITE_API_URL || '/api';
+const BASE = 'https://ecoo-backend.onrender.com/api';
 
 function headers() {
   const token = localStorage.getItem('ecoo_token');
