@@ -3,7 +3,7 @@ import { AppError } from '../middleware/errorHandler.js';
 import { normalizarRegla } from '../utils/ecocoins.js';
 import QRCode from 'qrcode';
 
-const WEB_BASE = process.env.WEB_CIUDADANO_URL || 'http://localhost:5173';
+const WEB_BASE = "https://ecoo-citizen.onrender.com"';
 
 function slugify(s) {
   return String(s)
