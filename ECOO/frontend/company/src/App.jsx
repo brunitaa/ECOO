@@ -29,9 +29,6 @@ export default function App() {
 
   const esPatrocinador = session.user?.tipo_empresa === "patrocinador_rse";
   const empresaId = Number(session.user?.id_empresa || 0);
-  const menuItems = esPatrocinador
-    ? tabs
-    : tabs.filter((item) => item.key === "caja");
 
   return (
     <EnterpriseShell

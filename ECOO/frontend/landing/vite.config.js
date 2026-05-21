@@ -10,6 +10,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "@ecoo/ui": path.resolve(__dirname, "../shared/ui/src"),
+      "lucide-react": path.resolve(__dirname, "./node_modules/lucide-react"),
+      "framer-motion": path.resolve(__dirname, "./node_modules/framer-motion"),
+      // Fixes the current BarChartPanel build error
+      "recharts": path.resolve(__dirname, "./node_modules/recharts"),
+      // Safely aliases react basics to prevent any hidden duplication issues
+      "react": path.resolve(__dirname, "./node_modules/react"),
+      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+      "react-router-dom": path.resolve(__dirname, "./node_modules/react-router-dom"),
     },
   },
   build: {
@@ -26,6 +34,6 @@ export default defineConfig({
   },
   server: {
     port: 5170,
-    proxy: { "/api": { target: "http://localhost:3001", changeOrigin: true } },
+    proxy: { "/api": { target: "https://ecoo-backend.onrender.com", changeOrigin: true } },
   },
 });

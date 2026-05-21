@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 const DEMO_PASSWORD = "demo123";
-const WEB_BASE = process.env.WEB_CIUDADANO_URL || "http://localhost:5173";
+const WEB_BASE = "https://ecoo-citizen.onrender.com";
 
 async function main() {
   const hash = await bcrypt.hash(DEMO_PASSWORD, 10);

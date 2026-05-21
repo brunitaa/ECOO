@@ -17,13 +17,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const corsOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5170,http://localhost:5173,http://localhost:5174,http://localhost:5175')
+const corsOrigins = ('https://ecoo-company2.onrender.com,https://ecoo-citizen.onrender.com,https://ecoo-pgpk.onrender.com,https://ecoo-admin.onrender.com')
   .split(',')
   .map((o) => o.trim());
 
 app.use(
   cors({
-    origin: corsOrigins,
+    origin: true, // 👈 Al poner true, Express-CORS acepta automáticamente cualquier URL que lo llame, ideal para solucionar problemas de subdominios variables
     credentials: true,
   })
 );
