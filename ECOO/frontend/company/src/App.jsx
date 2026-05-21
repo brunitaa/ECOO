@@ -7,13 +7,6 @@ import Spinner from "./components/Spinner";
 import EnterpriseShell from "./components/EnterpriseShell";
 import "./styles/global.css";
 
-// 1. Define the tabs structure here so JavaScript knows what it is!
-const tabs = [
-  { key: "caja", label: "Caja / Ventas" },
-  { key: "kpis", label: "Dashboard KPIs" },
-  { key: "qrs", label: "Panel Códigos QR" },
-];
-
 export default function App() {
   const [session, setSession] = useState(null);
   const [tab, setTab] = useState("caja");
@@ -36,10 +29,8 @@ export default function App() {
 
   const esPatrocinador = session.user?.tipo_empresa === "patrocinador_rse";
   const empresaId = Number(session.user?.id_empresa || 0);
-  
-  const menuItems = esPatrocinador
-    ? tabs
-    : tabs.filter((item) => item.key === "caja");
+
+  // Note: We removed the lines creating 'menuItems' and 'tabs' entirely!
 
   return (
     <EnterpriseShell
@@ -47,7 +38,6 @@ export default function App() {
       activeKey={tab}
       onSelect={setTab}
       onLogout={logout}
-      menuItems={menuItems} // 2. Make sure you actually pass this to your layout!
     >
       {tab === "kpis" && esPatrocinador && (
         <EmpresaKpiDashboard empresaId={empresaId} />
