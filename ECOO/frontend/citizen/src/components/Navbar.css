@@ -1,8 +1,11 @@
 .navbar {
-  background: var(--ec-gradient-header);
+  /* Forzamos un gradiente oscuro/bosque de respaldo por si la variable falla */
+  background: var(--ec-gradient-header, linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%));
   padding: 12px 16px 20px;
   color: #fff;
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .navbar::after {
@@ -17,45 +20,37 @@
 }
 
 .navbar--compact {
-  padding-bottom: 14px;
+  padding-bottom: 12px;
+  /* En modo compacto reducimos el margen para evitar saltos de línea extra */
 }
 
 .navbar__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px; /* Reducido un poco para ajustar */
 }
 
-.navbar__logo {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: #fff;
-}
-
-.navbar__logo-o {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background: var(--ec-coin);
-  border-radius: 50%;
-  margin: 0 -2px;
-  vertical-align: middle;
+/* Forzar que el enlace del logo sea flexible */
+.navbar__logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .navbar__avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  /* CORRECCIÓN: Un fondo ligeramente más oscuro para que contrasten las iniciales si el fondo es claro */
+  background: rgba(0, 0, 0, 0.15); 
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff; /* Iniciales siempre blancas legibles */
   background-size: cover;
   background-position: center;
 }
@@ -77,14 +72,14 @@
 
 .navbar__balance-card {
   background: #fff;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg, 12px);
   padding: 14px;
-  color: #333;
+  color: #333; /* Texto oscuro garantizado en la tarjeta blanca */
 }
 
 .navbar__balance-label {
   font-size: 0.65rem;
-  color: #888;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   margin-bottom: 6px;
@@ -96,26 +91,33 @@
   gap: 10px;
 }
 
-.navbar__ecoin-tag {
-  font-size: 0.65rem;
-  background: var(--ec-coin);
-  color: var(--ec-coin-txt);
-  padding: 2px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-}
-
+/* CORRECCIÓN CRÍTICA: Contenedor del saldo compacto */
 .navbar__compact-saldo {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
+  /* Cambiamos el fondo a un verde oscuro traslúcido para asegurar contraste si el fondo general clarea */
+  background: rgba(0, 0, 0, 0.12); 
+  border-radius: var(--radius-sm, 8px);
+  padding: 6px 12px;
   font-size: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
 }
 
 .navbar__compact-saldo > span:first-child {
-  opacity: 0.8;
+  color: #ffffff; /* Texto "Tu saldo" forzado a blanco con alta legibilidad */
+  font-weight: 500;
+  opacity: 0.95;
   flex: 1;
+}
+
+/* Estilos heredados por si acaso */
+.navbar__logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff;
 }
