@@ -9,7 +9,7 @@ import "./Auth.css";
 
 const REDIRECTS = {
   ciudadano: import.meta.env.VITE_URL_CIUDADANO || "http://localhost:5173",
-  comercio: import.meta.env.VITE_URL_CAJA || "http://localhost:5174",
+  comercio: "https://ecoo-company2.onrender.com",
   admin: "https://ecoo-admin.onrender.com",
 };
 
