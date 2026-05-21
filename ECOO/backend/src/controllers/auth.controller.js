@@ -8,7 +8,7 @@ function verifyPassword(hash, password) {
 }
 
 const REDIRECTS = {
-  ciudadano: process.env.URL_CIUDADANO || "http://localhost:5173",
+  ciudadano: "https://ecoo-citizen.onrender.com",
   comercio: "https://ecoo-company2.onrender.com",
   admin: "https://ecoo-admin.onrender.com",
 };
