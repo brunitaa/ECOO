@@ -23,7 +23,7 @@ const corsOrigins = (process.env.CORS_ORIGIN || 'https://ecoo-pgpk.onrender.com,
 
 app.use(
   cors({
-    origin: corsOrigins,
+    origin: true, // 👈 Al poner true, Express-CORS acepta automáticamente cualquier URL que lo llame, ideal para solucionar problemas de subdominios variables
     credentials: true,
   })
 );
