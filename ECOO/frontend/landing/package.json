@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ecoo/ui": "file:../shared/ui",
+    "@ecoo/ui": "../shared/ui",
     "framer-motion": "^12.39.0",
     "lucide-react": "^1.16.0",
     "react": "^18.3.1",
