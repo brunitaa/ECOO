@@ -13,20 +13,23 @@ export default function RewardCard({ recompensa, saldo, onCanjear, loading }) {
 
   return (
     <article
-      className={`reward-card${!puede ? ' reward-card--disabled' : ''}${recompensa.destacado ? ' reward-card--featured' : ''}`}
+      className={`reward-card ${!puede ? 'reward-card--disabled' : ''} ${recompensa.destacado ? 'reward-card--featured' : ''}`}
     >
       <div className="reward-card__icon" aria-hidden>
         <Icon name={iconName} size={26} />
       </div>
+
       <div className="reward-card__body">
         <h3 className="reward-card__title">{recompensa.titulo}</h3>
         <p className="reward-card__desc">{recompensa.descripcion}</p>
+        
         <div className="reward-card__meta">
           <EcoCoinBadge size="sm" amount={costo} />
           <span className="reward-card__stock">
             {sinStock ? 'Agotado' : `${stock} disponibles`}
           </span>
         </div>
+
         {!puede && !sinStock && faltan > 0 && (
           <>
             <p className="reward-card__faltan">Te faltan {faltan} EC</p>
@@ -36,6 +39,7 @@ export default function RewardCard({ recompensa, saldo, onCanjear, loading }) {
           </>
         )}
       </div>
+
       <button
         type="button"
         className="reward-card__btn"
@@ -43,13 +47,16 @@ export default function RewardCard({ recompensa, saldo, onCanjear, loading }) {
         onClick={() => onCanjear(recompensa)}
       >
         {loading ? (
-          '…'
+          'Procesando...'
         ) : sinStock ? (
-          '—'
+          'Agotado'
         ) : puede ? (
           'Canjear'
         ) : (
-          <Icon name="lock" size={16} />
+          <>
+            <Icon name="lock" size={14} />
+            <span>Bloqueado</span>
+          </>
         )}
       </button>
     </article>
