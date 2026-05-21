@@ -112,8 +112,7 @@ export default function Login() {
         )}
 
         <p className="auth-demo">
-          Demo: juan@upsa.edu · canjes@tazaeco.bo · admin@ecoo.app — pass:
-          demo123
+          
         </p>
       </D>
     </D>
