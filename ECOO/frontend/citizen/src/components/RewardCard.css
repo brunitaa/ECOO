@@ -3,124 +3,103 @@
   gap: 12px;
   align-items: center;
   background: #fff;
-  border-radius: var(--radius-md, 12px);
+  border-radius: var(--radius-md);
   padding: 12px;
-  border: 1px solid var(--ec-border, #e0e0e0);
-  transition: all 0.2s ease;
+  border: 1px solid var(--ec-border);
+  transition: var(--transition);
   animation: slideUp 0.35s ease;
-  width: 100%; /* Forzar a que respete el contenedor padre */
-  box-sizing: border-box; /* Crucial para que el padding no sume ancho */
-  position: relative;
 }
 
 .reward-card--featured {
-  border-color: var(--ec-coin, #fbbf24);
+  border-color: var(--ec-coin);
   border-width: 1.5px;
 }
 
 .reward-card--disabled {
-  opacity: 0.75;
+  opacity: 0.65;
 }
 
 .reward-card__icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 10px;
-  background: var(--ec-pale, #f4f9f4);
-  border: 1px solid var(--ec-border, #e0e0e0);
+  background: var(--ec-pale);
+  border: 1px solid var(--ec-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* Impide que el ícono se deforme o se encoja */
+  font-size: 1.4rem;
+  flex-shrink: 0;
 }
 
 .reward-card__body {
   flex: 1;
-  min-width: 0; /* Permite que los textos internos colapsen y no empujen al flex */
-  display: flex;
-  flex-direction: column;
+  min-width: 0;
 }
 
 .reward-card__title {
   font-size: 0.9rem;
   font-weight: 600;
-  margin: 0 0 2px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; /* Si el título es larguísimo, le pone "..." */
+  margin-bottom: 2px;
 }
 
 .reward-card__desc {
   font-size: 0.75rem;
-  color: #666;
-  margin: 0 0 6px 0;
-  line-height: 1.2;
-  
-  /* CORRECCIÓN CRÍTICA: Forzar el texto a máximo 2 líneas y cortar con "..." si se pasa */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: #888;
+  margin-bottom: 4px;
 }
 
 .reward-card__meta {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap; /* Si el stock y el badge no entran juntos, baja el stock en vez de romperse */
+  gap: 6px;
 }
 
 .reward-card__stock {
   font-size: 0.7rem;
-  color: #888;
+  color: #aaa;
 }
 
 .reward-card__faltan {
   font-size: 0.7rem;
-  color: #de3c3c; /* Color de advertencia sutil */
-  margin: 6px 0 2px 0;
+  color: #aaa;
+  margin-top: 4px;
 }
 
 .reward-card__bar {
-  height: 6px;
-  background: var(--ec-pale, #f4f9f4);
+  height: 5px;
+  background: var(--ec-pale);
   border-radius: 3px;
   overflow: hidden;
-  width: 100%; /* Ahora usa el 100% disponible del contenedor interno */
-  max-width: 120px; /* Límite para que no se vea gigantesco en pantallas medianas */
+  margin-top: 4px;
+  max-width: 80%;
 }
 
 .reward-card__bar-fill {
   height: 100%;
-  background: var(--ec-forest, #1b4332);
+  background: var(--ec-forest);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
 
 .reward-card__btn {
-  flex-shrink: 0; /* Impide que el botón se encoja o colapse su ancho */
-  background: var(--ec-forest, #1b4332);
+  flex-shrink: 0;
+  background: var(--ec-forest);
   color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
+  border-radius: 7px;
+  padding: 8px 12px;
   font-size: 0.75rem;
   font-weight: 600;
-  height: 34px; /* Altura fija para que mantenga simetría */
-  min-width: 75px; /* Ancho mínimo para que "Canjear" nunca se fragmente */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .reward-card__btn:disabled {
   background: #f0f0f0;
-  color: #b5b5b5;
+  color: #bbb;
   cursor: not-allowed;
 }
 
 .reward-card__btn:not(:disabled):hover {
-  background: var(--ec-mid, #2d6a4f);
+  background: var(--ec-mid);
 }
