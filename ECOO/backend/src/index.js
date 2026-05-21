@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const corsOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5170,http://localhost:5173,http://localhost:5174,http://localhost:5175')
+const corsOrigins = (process.env.CORS_ORIGIN || 'https://ecoo-qkmq.onrender.com,https://ecoo-admin.onrender.com')
   .split(',')
   .map((o) => o.trim());
 
