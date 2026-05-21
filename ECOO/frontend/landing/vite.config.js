@@ -10,6 +10,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@ecoo/ui": path.resolve(__dirname, "../shared/ui/src"),
+      // Add this line below to redirect lucide-react resolution to landing's node_modules
+      "lucide-react": path.resolve(__dirname, "./node_modules/lucide-react"),
     },
   },
   build: {
