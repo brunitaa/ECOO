@@ -30,7 +30,7 @@ export async function getQrsEmpresa(req, res, next) {
       throw new AppError("ID de empresa inválido", 400);
     }
     assertEmpresaAccess(req, id_empresa);
-    const WEB_BASE = process.env.WEB_CIUDADANO_URL || "http://localhost:5173";
+    const WEB_BASE = "https://ecoo-citizen.onrender.com";
     const puntos = await prisma.puntoEcologico.findMany({
       where: { id_empresa },
       include: {
