@@ -13,43 +13,55 @@ export default function RewardCard({ recompensa, saldo, onCanjear, loading }) {
 
   return (
     <article
-      className={`reward-card${!puede ? ' reward-card--disabled' : ''}${recompensa.destacado ? ' reward-card--featured' : ''}`}
+      className={`reward-card ${!puede ? 'reward-card--disabled' : ''} ${recompensa.destacado ? 'reward-card--featured' : ''}`}
     >
       <div className="reward-card__icon" aria-hidden>
-        <Icon name={iconName} size={26} />
+        <Icon name={iconName} size={24} />
       </div>
+
       <div className="reward-card__body">
-        <h3 className="reward-card__title">{recompensa.titulo}</h3>
-        <p className="reward-card__desc">{recompensa.descripcion}</p>
+        <h3 className="reward-card__title" title={recompensa.titulo}>
+          {recompensa.titulo}
+        </h3>
+        <p className="reward-card__desc">
+          {recompensa.descripcion}
+        </p>
+        
         <div className="reward-card__meta">
           <EcoCoinBadge size="sm" amount={costo} />
           <span className="reward-card__stock">
             {sinStock ? 'Agotado' : `${stock} disponibles`}
           </span>
         </div>
+
         {!puede && !sinStock && faltan > 0 && (
-          <>
-            <p className="reward-card__faltan">Te faltan {faltan} EC</p>
+          <div className="reward-card__progress-container">
+            <p className="reward-card__faltan">Faltan {faltan} EC</p>
             <div className="reward-card__bar">
               <div className="reward-card__bar-fill" style={{ width: `${progreso}%` }} />
             </div>
-          </>
+          </div>
         )}
       </div>
+
       <button
         type="button"
         className="reward-card__btn"
         disabled={!puede || loading}
         onClick={() => onCanjear(recompensa)}
+        aria-label={sinStock ? 'Premio agotado' : puede ? 'Canjear premio' : 'Premio bloqueado'}
       >
         {loading ? (
-          '…'
+          '...'
         ) : sinStock ? (
-          '—'
+          'Agotado'
         ) : puede ? (
           'Canjear'
         ) : (
-          <Icon name="lock" size={16} />
+          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <Icon name="lock" size={14} />
+            <span>Candado</span>
+          </span>
         )}
       </button>
     </article>
