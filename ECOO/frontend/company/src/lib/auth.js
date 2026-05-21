@@ -1,6 +1,6 @@
 import { consumeAuthCallback } from './authCallback.js';
 
-const PORTAL = import.meta.env.VITE_PORTAL_URL || 'http://localhost:5170';
+const PORTAL = 'https://ecoo-pgpk.onrender.com';
 const EXPECTED_ROL = 'comercio';
 
 export function getSession() {
