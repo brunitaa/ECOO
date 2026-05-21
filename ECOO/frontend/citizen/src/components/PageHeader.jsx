@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { BrandLogo } from "@ecoo/ui";
-import "./PageHeader.css";
+import { useNavigate } from 'react-router-dom';
+import BrandLogo from './brand/BrandLogo';
+import './PageHeader.css';
 
 /**
  * Cabecera con volver atrás seguro (dashboard o historial válido).
@@ -8,8 +8,8 @@ import "./PageHeader.css";
 export default function PageHeader({
   title,
   subtitle,
-  backTo = "/",
-  backLabel = "Volver",
+  backTo = '/',
+  backLabel = 'Volver',
   onBack,
   showLogo = false,
 }) {
@@ -20,7 +20,7 @@ export default function PageHeader({
       await onBack();
       return;
     }
-    if (backTo === "history" && window.history.length > 1) {
+    if (backTo === 'history' && window.history.length > 1) {
       navigate(-1);
     } else {
       navigate(backTo, { replace: false });
@@ -29,12 +29,7 @@ export default function PageHeader({
 
   return (
     <header className="page-header">
-      <button
-        type="button"
-        className="page-header__back"
-        onClick={handleBack}
-        aria-label={backLabel}
-      >
+      <button type="button" className="page-header__back" onClick={handleBack} aria-label={backLabel}>
         ← {backLabel}
       </button>
       {showLogo && <BrandLogo height={28} className="page-header__logo" />}

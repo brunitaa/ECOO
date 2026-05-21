@@ -1,10 +1,10 @@
-import { EcoPointIcon } from "@ecoo/ui";
-import "./Spinner.css";
+import EcoPointIcon from './brand/EcoPointIcon';
+import './Spinner.css';
 
-export default function Spinner({ label = "Cargando...", fullScreen = false }) {
+export default function Spinner({ label = 'Cargando...', fullScreen = false }) {
   return (
     <div
-      className={`spinner-wrap${fullScreen ? " spinner-wrap--fullscreen" : ""}`}
+      className={`spinner-wrap${fullScreen ? ' spinner-wrap--fullscreen' : ''}`}
       role="status"
       aria-live="polite"
     >

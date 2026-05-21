@@ -1,19 +1,9 @@
-import { EcoPointIcon } from "@ecoo/ui";
-import "./PointsEstimate.css";
+import EcoPointIcon from './brand/EcoPointIcon';
+import './PointsEstimate.css';
 
-export default function PointsEstimate({
-  cantidad,
-  puntosPorUnidad,
-  total,
-  unidad,
-  loading,
-}) {
+export default function PointsEstimate({ cantidad, puntosPorUnidad, total, unidad, loading }) {
   if (loading) {
-    return (
-      <div className="points-estimate points-estimate--loading">
-        Calculando…
-      </div>
-    );
+    return <div className="points-estimate points-estimate--loading">Calculando…</div>;
   }
   if (total == null) return null;
 
@@ -23,19 +13,15 @@ export default function PointsEstimate({
         <EcoPointIcon size={40} />
         <div>
           <span className="points-estimate__label">Total estimado</span>
-          <strong className="points-estimate__total">
-            {total} ECOO POINTS
-          </strong>
+          <strong className="points-estimate__total">{total} ECOO POINTS</strong>
         </div>
       </div>
       {cantidad != null && puntosPorUnidad != null && (
         <p className="points-estimate__breakdown">
-          {cantidad} {unidad || "unidad(es)"} × {puntosPorUnidad} pts = {total}
+          {cantidad} {unidad || 'unidad(es)'} × {puntosPorUnidad} pts = {total}
         </p>
       )}
-      <p className="points-estimate__note">
-        Se acreditan tras aprobación del administrador Ecoo
-      </p>
+      <p className="points-estimate__note">Se acreditan tras aprobación del administrador Ecoo</p>
     </div>
   );
 }

@@ -1,35 +1,31 @@
-import { useState } from "react";
-import {
-  Link,
-  useSearchParams,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
-import { api } from "../api/client";
-import { saveSession } from "../lib/auth";
-import { BrandLogo, EcoPointIcon } from "@ecoo/ui";
-import { Button } from "@ecoo/ui";
-import "./AuthPages.css";
+import { useState } from 'react';
+import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
+import { api } from '../api/client';
+import { saveSession } from '../lib/auth';
+import BrandLogo from '../components/brand/BrandLogo';
+import EcoPointIcon from '../components/brand/EcoPointIcon';
+import { Button } from '@ecoo/ui';
+import './AuthPages.css';
 
 export default function Login() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const returnUrl = params.get("return") || location.state?.from || "/";
+  const returnUrl = params.get('return') || location.state?.from || '/';
 
-  const [correo, setCorreo] = useState("");
-  const [password, setPassword] = useState("");
+  const [correo, setCorreo] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const submit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
-      setError("");
-      const data = await api.login({ correo, password, tipo: "ciudadano" });
-      saveSession({ token: data.token, user: data.user, rol: "ciudadano" });
-      const target = returnUrl.startsWith("/") ? returnUrl : "/";
+      setError('');
+      const data = await api.login({ correo, password, tipo: 'ciudadano' });
+      saveSession({ token: data.token, user: data.user, rol: 'ciudadano' });
+      const target = returnUrl.startsWith('/') ? returnUrl : '/';
       navigate(target, { replace: true });
     } catch (err) {
       setError(err.message);
@@ -68,27 +64,15 @@ export default function Login() {
               autoComplete="current-password"
             />
           </label>
-          {error && (
-            <p className="auth-error" role="alert">
-              {error}
-            </p>
-          )}
-          <Button
-            type="submit"
-            variant="primary"
-            size="lg"
-            loading={loading}
-            className="auth-submit"
-          >
+          {error && <p className="auth-error" role="alert">{error}</p>}
+          <Button type="submit" variant="primary" size="lg" loading={loading} className="auth-submit">
             Iniciar sesión
           </Button>
         </form>
 
         <p className="auth-footer">
-          ¿No tienes cuenta?{" "}
-          <Link to={`/register?return=${encodeURIComponent(returnUrl)}`}>
-            Regístrate
-          </Link>
+          ¿No tienes cuenta?{' '}
+          <Link to={`/register?return=${encodeURIComponent(returnUrl)}`}>Regístrate</Link>
         </p>
         <p className="auth-demo">Demo: juan@upsa.edu / demo123</p>
       </div>
