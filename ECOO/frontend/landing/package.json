@@ -9,12 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ecoo/ui": "../shared/ui",
-    "framer-motion": "^12.39.0",
-    "lucide-react": "^1.16.0",
+    "@ecoo/ui": "file:../shared/ui",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.3",
+    "framer-motion": "^12.39.0",
+    "lucide-react": "^0.460.0",
     "recharts": "^3.8.1"
   },
   "devDependencies": {
