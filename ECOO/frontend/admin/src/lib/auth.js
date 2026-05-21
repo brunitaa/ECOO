@@ -1,6 +1,6 @@
 import { consumeAuthCallback } from "./authCallback.js";
 
-const PORTAL = import.meta.env.VITE_PORTAL_URL || "http://localhost:5170";
+const PORTAL = "https://ecoo-admin.onrender.com";
 const EXPECTED_ROL = "admin";
 
 export function getSession() {
