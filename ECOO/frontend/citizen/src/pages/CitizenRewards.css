@@ -1,15 +1,71 @@
+/* ==========================================================================
+   Layout Principal (App Shell Móvil y Web)
+   ========================================================================== */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh; /* Forzamos a que mida la pantalla exacta */
+  width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* El área central donde vive el catálogo */
+.page-content {
+  flex: 1;
+  overflow-y: auto; /* Solo esta zona desplaza hacia abajo */
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+/* El contenedor inyectado por Framer Motion / Transición */
+.citizen-rewards-transition {
+  width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Contenido del Catálogo
+   ========================================================================== */
+
 .citizen-rewards {
   padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px; /* Centra el catálogo si se abre en pantallas muy anchas */
+  margin: 0 auto;
 }
 
 .citizen-rewards__title {
-  font-size: 1rem;
-  color: var(--ec-forest);
-  margin-bottom: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ec-forest, #1b4332);
+  margin-top: 4px;
+  margin-bottom: 16px;
 }
 
-.citizen-rewards__list {
+/* Cambio crítico: Grid Responsivo en lugar de columna única forzada */
+.citizen-rewards__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenedor del Spinner para que no descoloque el layout */
+.citizen-rewards__loader {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* Parche de seguridad para las tarjetas internas de la librería ui */
+.citizen-rewards__grid > * {
+  box-sizing: border-box;
+  max-width: 100%; /* Evita que la tarjeta pise los márgenes */
 }
