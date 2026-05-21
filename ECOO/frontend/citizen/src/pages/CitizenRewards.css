@@ -1,0 +1,15 @@
+.citizen-rewards {
+  padding: 16px;
+}
+
+.citizen-rewards__title {
+  font-size: 1rem;
+  color: var(--ec-forest);
+  margin-bottom: 14px;
+}
+
+.citizen-rewards__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

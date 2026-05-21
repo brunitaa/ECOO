@@ -1,0 +1,35 @@
+.ec-skeleton {
+  display: block;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--ec-pale) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    var(--ec-pale) 100%
+  );
+  background-size: 200% 100%;
+  animation: ec-shimmer 1.2s ease-in-out infinite;
+}
+
+.ec-skeleton--circle { border-radius: 50%; }
+.ec-skeleton-mt { margin-top: 0.5rem; }
+
+.ec-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.ec-skeleton-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.15rem;
+  background: var(--ec-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--ec-border);
+}
+
+@keyframes ec-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

@@ -1,0 +1,91 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ecoo-postgres
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ecoo_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ecoo -d ecoo"]
+      interval: 3s
+      timeout: 5s
+      retries: 15
+
+  backend:
+    build: ./backend
+    container_name: ecoo-api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      CORS_ORIGIN: ${CORS_ORIGIN}
+      JWT_SECRET: ${JWT_SECRET}
+      PORT: 3001
+      URL_CIUDADANO: http://localhost:5173
+      URL_CAJA: http://localhost:5174
+      URL_ADMIN: http://localhost:5175
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend-portal:
+    build:
+      context: ./frontend-portal
+      args:
+        VITE_API_URL: http://localhost:3001/api
+        VITE_URL_CIUDADANO: http://localhost:5173
+        VITE_URL_CAJA: http://localhost:5174
+        VITE_URL_ADMIN: http://localhost:5175
+    container_name: ecoo-portal
+    ports:
+      - "5170:80"
+    depends_on:
+      - backend
+
+  frontend-ciudadano:
+    build:
+      context: ./frontend-ciudadano
+      args:
+        VITE_API_URL: http://localhost:3001/api
+        VITE_PORTAL_URL: http://localhost:5170
+    container_name: ecoo-ciudadano
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  frontend-caja:
+    build:
+      context: ./frontend-caja
+      args:
+        VITE_API_URL: http://localhost:3001/api
+        VITE_PORTAL_URL: http://localhost:5170
+    container_name: ecoo-caja
+    ports:
+      - "5174:80"
+    depends_on:
+      - backend
+
+  frontend-admin:
+    build:
+      context: ./frontend-admin
+      args:
+        VITE_API_URL: http://localhost:3001/api
+        VITE_PORTAL_URL: http://localhost:5170
+    container_name: ecoo-admin
+    ports:
+      - "5175:80"
+    depends_on:
+      - backend
+
+volumes:
+  ecoo_pgdata:

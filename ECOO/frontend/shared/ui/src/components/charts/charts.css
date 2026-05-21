@@ -1,0 +1,8 @@
+.ec-chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  color: var(--ec-ink-soft);
+  font-size: 0.875rem;
+}

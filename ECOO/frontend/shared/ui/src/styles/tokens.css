@@ -1,0 +1,132 @@
+/* ECOO — Brand tokens from IDEA.jpeg */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap");
+
+:root {
+  /* Primary brand palette */
+  --ec-blue: #1f6cc8;
+  --ec-blue-dk: #143d76;
+  --ec-blue-soft: #d9edff;
+  --ec-blue-bg: #eff6ff;
+
+  --ec-yellow: #f5c935;
+  --ec-yellow-dk: #d99c1a;
+  --ec-yellow-soft: #fff5d8;
+  --ec-yellow-bg: #fff8e1;
+
+  --ec-forest: #256a3c;
+  --ec-forest-mid: #338a4e;
+  --ec-leaf: #7ac57d;
+  --ec-mint: #b8e3b4;
+  --ec-lime: #d1f0c7;
+
+  --ec-white: #ffffff;
+  --ec-surface: #f7fbf9;
+  --ec-surface-soft: #eef4ef;
+  --ec-surface-strong: #dfe9e2;
+  --ec-bg: #f2f7f3;
+  --ec-screen: #f6faf8;
+
+  --ec-ink: #10221c;
+  --ec-ink-muted: #5d7766;
+  --ec-ink-soft: #8b9f8e;
+  --ec-muted: var(--ec-ink-soft);
+
+  --ec-border: rgba(30, 86, 151, 0.12);
+  --ec-border-strong: rgba(30, 86, 151, 0.22);
+  --ec-surface-border: rgba(17, 45, 92, 0.08);
+
+  --ec-danger: #d32f2f;
+  --ec-danger-bg: #fdecea;
+  --ec-warning: var(--ec-yellow-dk);
+  --ec-warning-bg: var(--ec-yellow-soft);
+  --ec-success: #2e7d32;
+  --ec-success-bg: #eaf6e7;
+  --ec-info: var(--ec-blue);
+  --ec-info-bg: var(--ec-blue-soft);
+
+  --ec-primary: var(--ec-blue);
+  --ec-secondary: var(--ec-forest);
+  --ec-accent: var(--ec-yellow);
+  --ec-highlight: var(--ec-yellow-dk);
+
+  /* Gradients */
+  --ec-gradient-hero: linear-gradient(
+    145deg,
+    #183e6f 0%,
+    #1f6cc8 48%,
+    #7ac57d 100%
+  );
+  --ec-gradient-card: linear-gradient(160deg, #ffffff 0%, #eff8ff 100%);
+  --ec-gradient-coin: linear-gradient(135deg, #f7cc47 0%, #f5c935 100%);
+  --ec-gradient-accent: linear-gradient(90deg, #1f6cc8 0%, #f5c935 100%);
+  --ec-gradient-waves: linear-gradient(
+    180deg,
+    rgba(165, 214, 167, 0.24) 0%,
+    transparent 70%
+  );
+
+  /* Typography */
+  --font-heading: "Sora", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.75rem;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  --space-0: 0;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 2.5rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --shadow-xs: 0 1px 3px rgba(16, 41, 71, 0.06);
+  --shadow-sm: 0 10px 30px rgba(16, 41, 71, 0.08);
+  --shadow-md: 0 18px 42px rgba(16, 41, 71, 0.12);
+  --shadow-lg: 0 30px 70px rgba(16, 41, 71, 0.16);
+  --shadow-card: 0 12px 34px rgba(16, 41, 71, 0.1);
+  --shadow-float: 0 22px 72px rgba(16, 41, 71, 0.14);
+
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-blur: blur(16px);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration: 280ms;
+  --duration-slow: 420ms;
+
+  --transition: all var(--duration) var(--ease-out);
+}
+
+[data-theme="dark"] {
+  --ec-white: #0f1722;
+  --ec-surface: #111b2d;
+  --ec-surface-soft: #152940;
+  --ec-surface-strong: #1b324d;
+  --ec-bg: #09111c;
+  --ec-screen: #0b1726;
+  --ec-ink: #f4f7f9;
+  --ec-ink-muted: #b1c2cd;
+  --ec-ink-soft: #8da0ad;
+  --ec-border: rgba(57, 116, 188, 0.14);
+  --ec-border-strong: rgba(57, 116, 188, 0.28);
+  --glass-bg: rgba(15, 26, 42, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}

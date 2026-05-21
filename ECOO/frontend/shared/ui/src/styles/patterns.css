@@ -1,0 +1,86 @@
+/* Patrones gráficos IDEA.jpeg — ondas y puntos */
+.ec-waves-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.ec-waves-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(245, 201, 53, 0.18),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(31, 108, 200, 0.12),
+      transparent 24%
+    ),
+    radial-gradient(
+      ellipse 120% 80% at 50% 100%,
+      rgba(165, 214, 167, 0.35) 0%,
+      transparent 58%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ec-waves-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    transparent 50%
+  );
+}
+
+.ec-dots-bg {
+  background-image: radial-gradient(
+    circle,
+    rgba(31, 108, 200, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+}
+
+.ec-glow {
+  position: relative;
+}
+
+.ec-glow::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(
+    circle,
+    rgba(245, 201, 53, 0.18),
+    transparent 55%
+  );
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.ec-sun-glow {
+  position: relative;
+}
+
+.ec-sun-glow::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(251, 192, 45, 0.35) 0%,
+    transparent 70%
+  );
+  top: -8px;
+  right: -8px;
+  pointer-events: none;
+}

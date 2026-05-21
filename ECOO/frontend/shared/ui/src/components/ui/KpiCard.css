@@ -1,0 +1,54 @@
+.ec-kpi {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.ec-kpi__icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-xl);
+  background: var(--ec-blue-soft);
+  color: var(--ec-blue-dk);
+}
+
+.ec-kpi__body {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.ec-kpi__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ec-ink);
+}
+
+.ec-kpi__label {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.875rem;
+  color: var(--ec-ink-muted);
+}
+
+.ec-kpi__trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.ec-kpi__trend--up {
+  color: var(--ec-success);
+}
+.ec-kpi__trend--down {
+  color: var(--ec-danger);
+}

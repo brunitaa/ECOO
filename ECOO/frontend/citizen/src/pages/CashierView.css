@@ -1,0 +1,71 @@
+.cashier {
+  min-height: 100dvh;
+  background: var(--ec-screen);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.cashier__hdr {
+  background: var(--ec-forest);
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cashier__back {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.cashier__hdr h1 {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.cashier__brand {
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.cashier__main {
+  padding: 24px 16px;
+}
+
+.cashier__instr {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.cashier__input {
+  width: 100%;
+  border: 2px solid var(--ec-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.cashier__btn {
+  width: 100%;
+  background: var(--ec-forest);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cashier__demo {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: var(--ec-muted);
+  text-align: center;
+  line-height: 1.5;
+}

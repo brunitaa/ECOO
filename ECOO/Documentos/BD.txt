@@ -1,0 +1,151 @@
+// --- MÓDULO DE USUARIOS Y AUTENTICACIÓN ---
+
+Table usuarios {
+  id_usuario integer [pk, increment]
+  nombre varchar [not null]
+  telefono varchar [unique, not null]
+  correo varchar [unique, not null]
+  password_hash text [not null]
+  foto_perfil_url text [null] // <-- ADAPTACIÓN: Requerido para el avatar de la UI B2C
+  universidad varchar 
+  fecha_registro timestamp [default: `now()` ]
+  estado user_status [default: 'activo'] 
+}
+
+Table administradores {
+  id_admin integer [pk, increment]
+  nombre varchar [not null]
+  correo varchar [unique, not null]
+  password_hash text [not null]
+  rol admin_role [default: 'moderador'] 
+}
+
+
+// --- MÓDULO CORPORATIVO Y PUNTOS VERDES ---
+
+Table empresas {
+  id_empresa integer [pk, increment]
+  nombre varchar [not null]
+  logo_url text
+  tipo_empresa varchar 
+  correo_contacto varchar [not null]
+  id_plan_suscripcion integer [not null]
+  fecha_inicio date [not null]
+  estado empresa_status [default: 'piloto'] 
+}
+
+Table planes_suscripcion {
+  id_plan integer [pk, increment]
+  nombre varchar [not null] 
+  costo_mensual decimal [not null]
+  limite_ecocoins_mes integer [not null]
+}
+
+Table puntos_ecologicos {
+  id_punto integer [pk, increment]
+  id_empresa integer [not null] 
+  nombre varchar [not null]
+  ubicacion text
+  tipo_accion_permitida varchar [not null] 
+  qr_codigo text [unique, not null]
+  estado generic_status [default: 'activo']
+}
+
+
+// --- MÓDULO DE OPERACIONES Y VALIDACIÓN (CON ADAPTACIÓN PARA MOCKUP + IA) ---
+
+Table acciones {
+  id_accion integer [pk, increment]
+  id_usuario integer [not null]
+  id_punto integer [not null]
+  foto_url text [not null] 
+  estado_validacion validacion_status [default: 'pendiente'] 
+  motivo_rechazo text [null] // <-- ADAPTACIÓN: Para mostrar "foto ilegible", "no corresponde", etc.
+  
+  // Campos de Auditoría e IA
+  tipo_validador validador_type [default: 'manual'] 
+  id_admin_validador integer [null] 
+  ia_score_confianza decimal [null] 
+  ia_metadatos text [null] 
+  
+  ecocoins_ganados integer [default: 0]
+  peso_kg decimal [default: 0.00] 
+  co2_evitado decimal [default: 0.00] 
+  fecha_registro timestamp [default: `now()` ]
+  fecha_validacion timestamp
+}
+
+
+// --- MÓDULO FINANCIERO (ECOCOINS) ---
+
+Table transacciones_ecocoins {
+  id_transaccion integer [pk, increment]
+  id_usuario integer [not null]
+  tipo transaccion_type [not null] 
+  monto integer [not null]
+  id_accion_origen integer [null] 
+  id_cupon_destino integer [null] 
+  fecha timestamp [default: `now()` ]
+}
+
+
+// --- MÓDULO DE RECOMPENSAS Y CANJES ---
+
+Table recompensas {
+  id_recompensa integer [pk, increment]
+  id_empresa_proveedora integer [not null] 
+  titulo varchar [not null]
+  descripcion text [not null]
+  costo_ecocoins integer [not null]
+  stock_disponible integer [not null] 
+  stock_reservado integer [default: 0] 
+  fecha_inicio date
+  fecha_fin date
+  estado generic_status [default: 'activo']
+}
+
+Table cupones {
+  id_cupon integer [pk, increment]
+  id_usuario integer [not null]
+  id_recompensa integer [not null]
+  codigo_unico varchar [unique, not null] 
+  estado cupon_status [default: 'disponible'] 
+  fecha_generacion timestamp [default: `now()` ]
+  fecha_canje timestamp
+}
+
+
+// --- MÓDULO DE ANALÍTICA HISTÓRICA RSE ---
+
+Table historico_metricas_rse {
+  id_reporte integer [pk, increment]
+  id_empresa integer [not null]
+  año integer [not null]
+  mes integer [not null]
+  kg_reciclados_totales decimal [default: 0.00]
+  co2_evitado_total decimal [default: 0.00]
+  usuarios_impactados_unicos integer [default: 0]
+  cupones_emitidos_total integer [default: 0]
+  roi_rse_calculado decimal [default: 0.00]
+  ultima_actualizacion timestamp [default: `now()` ]
+
+  Note: 'Constraint Único: id_empresa + año + mes'
+}
+
+
+// --- RELACIONES ---
+
+Ref: empresas.id_plan_suscripcion > planes_suscripcion.id_plan
+Ref: puntos_ecologicos.id_empresa > empresas.id_empresa
+Ref: acciones.id_usuario > usuarios.id_usuario
+Ref: acciones.id_punto > puntos_ecologicos.id_punto
+Ref: acciones.id_admin_validador > administradores.id_admin
+
+Ref: transacciones_ecocoins.id_usuario > usuarios.id_usuario
+Ref: transacciones_ecocoins.id_accion_origen > acciones.id_accion
+Ref: transacciones_ecocoins.id_cupon_destino > cupones.id_cupon
+
+Ref: recompensas.id_empresa_proveedora > empresas.id_empresa
+Ref: cupones.id_usuario > usuarios.id_usuario
+Ref: cupones.id_recompensa > recompensas.id_recompensa
+Ref: historico_metricas_rse.id_empresa > empresas.id_empresa

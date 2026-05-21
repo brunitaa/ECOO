@@ -1,0 +1,57 @@
+@import '@ecoo/ui/styles/tokens.css';
+@import '@ecoo/ui/styles/base.css';
+@import '@ecoo/ui/styles/patterns.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--ec-bg);
+  color: var(--ec-ink);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--ec-screen);
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+
+.app-shell--wide {
+  max-width: 960px;
+}
+
+.page {
+  padding: 0 0 88px;
+  min-height: 100dvh;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity var(--duration), transform var(--duration);
+  pointer-events: none;
+}

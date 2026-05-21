@@ -1,0 +1,19 @@
+@import '@ecoo/ui/styles/tokens.css';
+@import '@ecoo/ui/styles/base.css';
+@import '@ecoo/ui/styles/patterns.css';
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--ec-bg);
+  color: var(--ec-ink);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

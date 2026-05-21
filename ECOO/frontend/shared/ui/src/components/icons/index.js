@@ -1,0 +1,1 @@
+export { default as Icon, iconNames } from './Icon.jsx';

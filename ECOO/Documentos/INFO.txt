@@ -1,0 +1,43 @@
+# PROMPT DE DESARROLLO: MIGRACIÓN Y CREACIÓN DE FRONTEND EN REACT + BACKEND EN NODE.JS
+
+Eres un Desarrollador Frontend Senior experto en React (Vite), CSS moderno (Tailwind / CSS Modules) y Node.js. Vamos a construir el MVP de "Ecoo" basándonos en la lógica y la estructura del archivo `@ecoo_mockups_v2.html`, pero **no lo copies en su totalidad**. El diseño del HTML actual es solo una base estructural; tu objetivo principal es **mejorar y refinar la experiencia UX/UI**, convirtiendo los flujos estáticos en una aplicación React interactiva, fluida y con un diseño visualmente premium.
+
+---
+
+## 🎨 1. DIRECTRICES DE DISEÑO UX/UI EN REACT
+El HTML provisto es un punto de partida funcional. Para la aplicación en React, debes mejorar la interfaz aplicando las siguientes pautas:
+* **Fidelidad y Consistencia de Marca:** Utiliza rigurosamente los tokens de marca del HTML (`--ec-forest`, `--ec-coin`, etc.), pero mejora los contrastes, tipografías y espaciados (paddings/margins) para que se sienta como una aplicación móvil nativa (PWA).
+* **Feedback de Estado Explicito (UX):** Cada acción (canjear, escanear, validar) debe tener estados visuales de carga (spinners), éxito (animaciones verdes con checks) o error (banners rojos con explicaciones claras).
+* **Interactividad Fluida:** Usa transiciones suaves (`transition: all 0.3s ease`) al abrir modales, cambiar de pestañas (Tabs) o remover tarjetas del DOM.
+
+---
+
+## 💻 2. ARQUITECTURA DEL FRONTEND (React + Vite)
+Divide el HTML base en componentes de React altamente reutilizables y maneja el estado global de forma eficiente:
+
+### Estructura de Componentes Sugerida:
+* `Navbar.jsx`: Barra superior que muestra dinámicamente el avatar del usuario y su saldo de EcoCoins (`useState`).
+* `RewardCard.jsx`: Tarjeta modular para las recompensas de los comercios (con control de stock y botón interactivo de canje).
+* `ActionCard.jsx`: Tarjeta de moderación para el panel de administración (muestra fotos, datos del alumno y botones de acción).
+* `QRModal.jsx`: Modal translúcido adaptativo para renderizar el QR dinámico de los cupones.
+
+### Flujos Interactivos Clave a Implementar en React:
+1. **Flujo B2C (Estudiante):** Al hacer clic en un "Punto Ecológico", abre un modal que capture la geolocalización nativa del navegador (`navigator.geolocation`) y permita subir la foto de evidencia. Al canjear un premio, debe consumir la API y renderizar el QR único en pantalla usando la librería `qrcode.react`.
+2. **Flujo B2B (Comercio):** Pantalla limpia con un input/simulador de escaneo que envíe el UUID del cupón al backend y pinte un feedback UX gigante (Verde = Válido / Rojo = Error/Duplicado).
+3. **Flujo Admin (Validación):** Un dashboard donde las tarjetas de acciones pendientes desaparezcan con una animación suave de desvanecimiento (`opacity-0`) al ser aprobadas o rechazadas.
+
+---
+
+## 🗄️ 3. MODELO DE DATOS (PostgreSQL) & BACKEND (Node.js + Express)
+Crea una API REST en una carpeta `/backend` que soporte la lógica del frontend con consultas parametrizadas (`pg`) y manejo de transacciones:
+
+* **`GET /api/usuarios/:id/saldo`:** Calcula el saldo real mediante un `SUM` dinámico en la tabla `transacciones_ecocoins`.
+* **`POST /api/acciones/registrar`:** Aplica control anti-fraude calculando la distancia física (Haversine) entre el GPS del usuario y el punto ecológico. Rechaza si la distancia > 50 metros.
+* **`POST /api/recompensas/canjear`:** Usa transacciones SQL (`BEGIN/COMMIT`) para verificar saldo, validar `stock_disponible > 0`, restar stock, generar el cupón con UUID v4 seguro e insertar el débito.
+* **`POST /api/cupones/validar-caja`:** Verifica el UUID. Si el estado es `'canjeado'`, retorna un error detallado con la fecha de uso previo para evitar el doble canje.
+
+---
+
+## 🚀 PASO A PASO REQUERIDO PARA LA RESPUESTA
+1. **Backend:** Genera primero los archivos de rutas y controladores en Node.js/Express, asegurando el manejo seguro de los códigos QR (UUID) y la lógica transaccional.
+2. **Frontend React:** Escribe el código de los componentes principales (`Navbar`, `RewardCard`, `QRModal`) y las 3 vistas de usuario, importando y refinando los estilos visuales del archivo HTML original para lograr una interfaz UX/UI moderna, limpia y responsiva.

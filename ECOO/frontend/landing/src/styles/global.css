@@ -1,0 +1,7 @@
+@import '@ecoo/ui/styles/tokens.css';
+@import '@ecoo/ui/styles/base.css';
+@import '@ecoo/ui/styles/patterns.css';
+
+#root {
+  min-height: 100vh;
+}

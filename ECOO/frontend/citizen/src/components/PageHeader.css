@@ -1,0 +1,42 @@
+.page-header {
+  padding: 12px 16px 8px;
+  background: linear-gradient(180deg, var(--ec-pale) 0%, transparent 100%);
+}
+
+.page-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--ec-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ec-forest);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.page-header__back:hover {
+  background: var(--ec-pale);
+  border-color: var(--ec-forest);
+}
+
+.page-header__logo {
+  margin-bottom: 8px;
+}
+
+.page-header__title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--ec-forest);
+  margin: 0;
+}
+
+.page-header__sub {
+  font-size: 0.8rem;
+  color: var(--ec-muted);
+  margin: 4px 0 0;
+}

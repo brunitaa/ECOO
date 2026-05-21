@@ -1,0 +1,61 @@
+.brand-logo {
+  display: block;
+  object-fit: contain;
+}
+
+.eco-point-icon {
+  display: inline-block;
+  object-fit: contain;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.brand-splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 40vh;
+  padding: 24px;
+}
+
+.brand-splash__logo {
+  height: 56px;
+}
+
+.brand-splash__point {
+  width: 72px;
+  height: 72px;
+  animation: eco-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes eco-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.92;
+  }
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px 16px 8px;
+  border-top: 1px solid var(--ec-border);
+  margin-top: 16px;
+}
+
+.app-footer img {
+  height: 28px;
+  margin: 0 auto 8px;
+  opacity: 0.9;
+}
+
+.app-footer p {
+  font-size: 0.7rem;
+  color: var(--ec-muted);
+}

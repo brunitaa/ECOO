@@ -1,0 +1,33 @@
+.ecoin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7f6ff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ecoin-badge--lg {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.ecoin-badge__icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(242, 225, 76, 0.14);
+  color: #f2e14c;
+  font-size: 0.85rem;
+}
+
+.ecoin-badge__amount {
+  min-width: 2rem;
+  text-align: right;
+}

@@ -1,0 +1,301 @@
+--- PAGE 1 ---
+ 
+1. Acciones Sostenibles  
+¿Qué representa?  
+Muestra la cantidad total de acciones sostenibles realizadas y registradas dentro de 
+la plataforma.  
+Ejemplos de acciones  
+• reciclaje,  
+• movilidad sostenible,  
+• voluntariado,  
+• reforestación,  
+• ahorro energético,  
+• limpieza de espacios públicos,  
+• reutilización de residuos.  
+¿Cómo se mide?  
+Cada vez que un usuario:  
+1. realiza una acción sostenible,  
+2. la registra en la plataforma,  
+3. y esta es validada,  
+el sistema suma una nueva acción al contador general.  
+¿Cómo se valida?  
+• escaneo QR,  
+• fotografía,  
+• geolocalización,  
+• comprobantes,  
+¿Por qué es importante?  
+Este KPI permite visualizar:  
+• nivel de participación,  
+• actividad de la comunidad,  
+• efectividad de campañas,  
+• impacto generado.  
+ 
+
+--- PAGE 2 ---
+2. Personas Impactadas  
+¿Qué representa?  
+Cantidad de usuarios únicos que participaron en acciones o campañas sostenibles.  
+¿Cómo se mide?  
+La plataforma contabiliza:  
+• usuarios activos,  
+• participantes en campañas.  
+Aunque una persona realice múltiples acciones, se contabiliza una sola vez como 
+persona impactada.  
+Ejemplo  
+• Un usuario realiza  3 acciones . 
+• Cuenta como 1 persona impactada.  
+¿Por qué es importante?  
+Este KPI ayuda a medir:  
+• alcance social,  
+• engagement ciudadano,  
+• crecimiento de la comunidad,  
+• participación de usuarios.  
+ 
+3. Residuos Reciclados  
+¿Qué representa?  
+Cantidad total de residuos recuperados mediante campañas sostenibles.  
+Tipos de residuos  
+• plástico,  
+• vidrio,  
+• cartón,  
+• aluminio,  
+• papel,  
+• electrónicos.  
+
+--- PAGE 3 ---
+¿Cómo se mide?  
+La medición puede realizarse mediante:  
+• puntos de reciclaje aliados,  
+• pesaje de residuos,  
+• equivalencias por cantidad,  
+• comprobantes,  
+• QR en centros de reciclaje.  
+Ejemplo  
+• 10 botellas PET = peso estimado equivalente.  
+¿Por qué es importante?  
+Permite convertir acciones sostenibles en impacto ambiental tangible y medible.  
+ 
+4. CO₂ Evitado  
+¿Qué representa?  
+Estimación de emisiones de carbono que no fueron generadas gracias a acciones 
+sostenibles.  
+Importante  
+No se mide directamente.  
+La plataforma utiliza equivalencias ambientales internacionales para calcular una 
+estimación.  
+Ejemplos  
+• reciclar plástico evita emisiones,  
+• usar bicicleta reduce emisiones de transporte,  
+• reutilizar materiales disminuye contaminación.  
+¿Cómo se calcula?  
+Mediante fórmulas basadas en:  
+• kilogramos reciclados,  
+• kilómetros recorridos en bicicleta,  
+• ahorro energético,  
+
+--- PAGE 4 ---
+• reducción de residuos.  
+¿Por qué es importante?  
+El CO₂ es uno de los indicadores ambientales más utilizados en métricas ESG y 
+sostenibilidad empresarial.  
+ 
+5. EcoCoins Entregadas  
+¿Qué representa?  
+Cantidad total de recompensas digitales generadas por acciones sostenibles.  
+¿Cómo funciona?  
+Cada acción tiene un valor determinado.  
+Ejemplos:  
+• reciclaje = 5 EcoCoins,  
+• voluntariado = 15 EcoCoins,  
+• movilidad sostenible = 8 EcoCoins.  
+¿Cómo se mide?  
+La plataforma registra automáticamente:  
+• EcoCoins emitidas,  
+• EcoCoins acumuladas,  
+• EcoCoins canjeadas.  
+¿Por qué es importante?  
+Permite medir:  
+• actividad de usuarios,  
+• nivel de participación,  
+• funcionamiento del ecosistema de recompensas.  
+ 
+
+--- PAGE 5 ---
+6. Índice ESG  
+¿Qué representa?  
+Es un puntaje interno generado por la plataforma para resumir el impacto sostenible 
+de la empresa. (no es medición internacional sino como algo inventado)  
+El índice evalúa:  
+• impacto ambiental,  
+• impacto social,  
+• continuidad de campañas,  
+• participación ciudadana.  
+Componentes del ESG  
+E – Environmental  
+Mide:  
+• reciclaje,  
+• reducción de CO₂,  
+• residuos recuperados,  
+• acciones ecológicas.  
+S – Social  
+Mide:  
+• participación comunitaria,  
+• voluntariado,  
+• usuarios impactados,  
+• engagement.  
+G – Governance  
+Mide:  
+• continuidad de campañas,  
+• seguimiento de metas,  
+• transparencia,  
+• compromiso sostenible.  
+¿Cómo se calcula?  
+La plataforma asigna pesos a cada categoría.  
+
+--- PAGE 6 ---
+Ejemplo:  
+• Ambiental = 50%  
+• Social = 35%  
+• Gobernanza = 15%  
+Con estos datos se genera un puntaje final sobre 100.  
+¿Por qué es importante?  
+Permite a las empresas visualizar rápidamente su desempeño sostenible.  
+ 
+7. Evolución de Impacto  
+¿Qué representa?  
+Muestra el crecimiento del impacto sostenible a través del tiempo.  
+¿Qué analiza?  
+• acciones sostenibles por mes,  
+• crecimiento de usuarios,  
+• reducción de CO₂,  
+• participación en campañas.  
+¿Por qué es importante?  
+Ayuda a visualizar:  
+• tendencias,  
+• crecimiento,  
+• efectividad de campañas,  
+• progreso empresarial.  
+ 
+8. Distribución de Impacto  
+¿Qué representa?  
+Muestra qué categorías generan mayor impacto dentro de la plataforma.  
+
+--- PAGE 7 ---
+Ejemplo  
+• reciclaje = 45%  
+• movilidad sostenible = 25%  
+• ahorro energético = 15%  
+• voluntariado = 10%  
+¿Cómo se mide?  
+Cada acción registrada se clasifica por categoría.  
+¿Por qué es importante?  
+Permite identificar:  
+• qué campañas funcionan mejor,  
+• dónde existe mayor participación,  
+• áreas con mayor impacto.  
+ 
+9. Mapa de Impacto  
+¿Qué representa?  
+Visualización geográfica de dónde se generan acciones sostenibles.  
+¿Cómo se mide?  
+Mediante:  
+• GPS,  
+• ubicación del usuario,  
+• puntos QR,  
+• campañas registradas.  
+¿Por qué es importante?  
+Permite visualizar:  
+• zonas activas,  
+• ciudades con mayor participación,  
+• alcance territorial del impacto.  
+ 
+
+--- PAGE 8 ---
+10. Campañas Activas  
+¿Qué representa?  
+Muestra las campañas sostenibles patrocinadas por empresas.  
+Información mostrada  
+• participantes,  
+• acciones realizadas,  
+• progreso,  
+• metas alcanzadas.  
+¿Por qué es importante?  
+Permite medir el desempeño individual de cada campaña.  
+ 
+11. ROI de Sostenibilidad  
+¿Qué representa?  
+Relación entre la inversión realizada por la empresa y el impacto generado.  
+Ejemplo  
+La empresa invierte:  
+• $5.000  
+Resultados:  
+• 12.458 acciones sostenibles,  
+• 8.230 personas impactadas.  
+Resultado  
+La plataforma puede mostrar:  
+“Cada $1 invertido generó 2.49 acciones sostenibles.”  
+¿Por qué es importante?  
+Permite justificar inversiones en RSE y sostenibilidad.  
+ 
+
+--- PAGE 9 ---
+12. Comparativo Mensual  
+¿Qué representa?  
+Comparación de resultados entre diferentes períodos.  
+Ejemplo  
+Abril:  
+• 10.542 acciones  
+Mayo:  
+• 12.458 acciones  
+¿Por qué es importante?  
+Permite visualizar:  
+• crecimiento,  
+• mejora,  
+• evolución de campañas.  
+ 
+13. Participación de Usuarios  
+¿Qué representa?  
+Análisis del comportamiento de la comunidad.  
+¿Qué puede mostrar?  
+• edades,  
+• ciudades,  
+• frecuencia de participación,  
+• tipo de actividades realizadas.  
+¿Por qué es importante?  
+Ayuda a las empresas a entender:  
+• su audiencia,  
+• comportamiento de usuarios,  
+• preferencias de participación.  
+ 
+
+--- PAGE 10 ---
+14. Acciones Recientes  
+¿Qué representa?  
+Muestra actividad reciente dentro de la plataforma.  
+¿Qué incluye?  
+• usuario,  
+• acción realizada,  
+• fecha,  
+• EcoCoins obtenidas.  
+¿Por qué es importante?  
+Hace que la plataforma se vea activa y dinámica.  
+ 
+15. Reportes Rápidos  
+¿Qué representa?  
+Documentos descargables con información de impacto y sostenibilidad.  
+¿Qué pueden incluir?  
+• métricas ESG,  
+• resultados de campañas,  
+• KPIs,  
+• estadísticas,  
+• impacto ambiental y social.  
+¿Por qué es importante?  
+Las empresas necesitan reportes para:  
+• auditorías,  
+• presentaciones,  
+• inversionistas,  
+• directorios,  
+• reportes de sostenibilidad.  
+ 
+ 
+

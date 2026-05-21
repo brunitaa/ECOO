@@ -1,0 +1,23 @@
+.error-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--ec-danger-bg);
+  color: var(--ec-danger);
+  border: 1px solid #ef9a9a;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 0.875rem;
+  margin: 12px 16px;
+  animation: slideUp 0.3s ease;
+}
+
+.error-banner__close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ec-danger);
+  padding: 0 4px;
+}

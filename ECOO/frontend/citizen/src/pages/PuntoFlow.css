@@ -1,0 +1,139 @@
+.punto-hdr {
+  background: var(--ec-forest);
+  color: #fff;
+  padding: 20px 16px 24px;
+}
+
+.punto-hdr__badge {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.punto-hdr h1 {
+  font-size: 1.25rem;
+  margin: 10px 0 4px;
+}
+
+.punto-hdr p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.punto-flow {
+  padding: 16px;
+}
+
+.punto-form__question {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ec-forest);
+  margin-bottom: 20px;
+}
+
+.punto-form__question input {
+  font-size: 1.5rem;
+  padding: 14px;
+  border: 2px solid var(--ec-border);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  text-align: center;
+}
+
+.punto-form__unit {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ec-muted);
+}
+
+.punto-form__photo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.punto-form__photo-hint {
+  font-size: 0.75rem;
+  color: var(--ec-muted);
+}
+
+.punto-form__preview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--ec-coin);
+  margin-bottom: 16px;
+}
+
+.punto-form__submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--ec-forest);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.punto-success {
+  min-height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  text-align: center;
+  background: linear-gradient(160deg, #1b5e20, #43a047);
+  color: #fff;
+  animation: scaleIn 0.4s ease;
+}
+
+.punto-success__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.punto-success__detail {
+  margin: 12px 0;
+  opacity: 0.95;
+}
+
+.punto-success__ec {
+  margin-bottom: 24px;
+}
+
+.punto-success button {
+  background: #fff;
+  color: var(--ec-forest);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.punto-back {
+  display: block;
+  text-align: center;
+  margin: 24px;
+  color: var(--ec-forest);
+  font-weight: 600;
+}

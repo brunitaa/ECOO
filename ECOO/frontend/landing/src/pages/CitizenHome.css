@@ -1,0 +1,135 @@
+.citizen-home {
+  padding: 12px 16px 24px;
+}
+
+.citizen-home__stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat-chip {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--ec-pale);
+  border: 1px solid var(--ec-border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  text-align: center;
+}
+
+.stat-chip strong {
+  font-size: 1rem;
+  color: var(--ec-forest);
+}
+
+.stat-chip span {
+  font-size: 0.65rem;
+  color: var(--ec-muted);
+}
+
+.citizen-home__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--ec-forest);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.citizen-home__cta:hover {
+  background: var(--ec-mid);
+}
+
+.citizen-home__streak {
+  background: var(--ec-coin-bg);
+  border: 1px solid var(--ec-coin);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: var(--ec-coin-txt);
+  margin-bottom: 16px;
+}
+
+.citizen-home__section {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ec-muted);
+  margin-bottom: 8px;
+}
+
+.citizen-home__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.citizen-home__empty {
+  font-size: 0.85rem;
+  color: var(--ec-muted);
+  padding: 16px;
+  text-align: center;
+}
+
+.ac-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--ec-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.ac-row--pendiente {
+  opacity: 0.75;
+}
+
+.ac-row__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ec-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.ac-row strong {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.ac-row small {
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+.ac-row__coins {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ec-forest);
+}
+
+.ac-row__pending {
+  margin-left: auto;
+  font-size: 0.65rem;
+  background: var(--ec-coin-bg);
+  color: #c49000;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--ec-coin);
+}

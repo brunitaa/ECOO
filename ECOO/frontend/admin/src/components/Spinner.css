@@ -1,0 +1,21 @@
+.spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--ec-pale);
+  border-top-color: var(--ec-forest);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.spinner-label {
+  font-size: 0.875rem;
+  color: var(--ec-muted);
+}

@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--ec-ink);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(31, 108, 200, 0.12),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(245, 201, 53, 0.12),
+      transparent 18%
+    ),
+    var(--ec-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: var(--ec-ink);
+}
+
+a {
+  color: var(--ec-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+a:hover {
+  color: var(--ec-blue-dk);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.ec-container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.ec-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.ec-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.ec-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.ec-section-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.ec-pill,
+.ec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ec-pill {
+  padding: 0.55rem 1rem;
+  background: var(--ec-blue-soft);
+  color: var(--ec-blue-dk);
+}
+
+.ec-badge {
+  padding: 0.35rem 0.85rem;
+  background: var(--ec-yellow-soft);
+  color: var(--ec-yellow-dk);
+}
+
+.ec-shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+.ec-glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.ec-gradient-text {
+  background: var(--ec-gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

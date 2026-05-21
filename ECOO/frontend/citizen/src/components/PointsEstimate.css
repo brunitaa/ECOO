@@ -1,0 +1,45 @@
+.points-estimate {
+  background: linear-gradient(135deg, var(--ec-coin-bg) 0%, #fff 100%);
+  border: 2px solid var(--ec-coin);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.points-estimate__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.points-estimate__label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--ec-coin-txt);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.points-estimate__total {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--ec-forest);
+}
+
+.points-estimate__breakdown {
+  font-size: 0.85rem;
+  color: #444;
+  margin-top: 8px;
+}
+
+.points-estimate__note {
+  font-size: 0.68rem;
+  color: var(--ec-muted);
+  margin-top: 6px;
+}
+
+.points-estimate--loading {
+  text-align: center;
+  color: var(--ec-muted);
+  font-size: 0.85rem;
+}

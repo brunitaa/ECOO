@@ -1,0 +1,44 @@
+.ecoin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ecoin-badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ec-coin);
+  color: var(--ec-coin-txt);
+  font-weight: 800;
+  border-radius: 50%;
+  border: 2px solid var(--ec-coin-dk);
+}
+
+.ecoin-badge--sm .ecoin-badge__icon {
+  width: 14px;
+  height: 14px;
+  font-size: 7px;
+}
+
+.ecoin-badge--md .ecoin-badge__icon {
+  width: 20px;
+  height: 20px;
+  font-size: 9px;
+}
+
+.ecoin-badge--lg .ecoin-badge__icon {
+  width: 36px;
+  height: 36px;
+  font-size: 11px;
+}
+
+.ecoin-badge__amount {
+  font-weight: 700;
+  color: var(--ec-coin-txt);
+}
+
+.ecoin-badge--lg .ecoin-badge__amount {
+  font-size: 1.75rem;
+  color: var(--ec-forest);
+}

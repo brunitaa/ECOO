@@ -1,0 +1,120 @@
+.cashier {
+  min-height: 100%;
+  display: grid;
+  gap: 24px;
+  padding: 0;
+}
+
+.cashier__hdr {
+  display: grid;
+  gap: 10px;
+  padding: 28px 26px;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 80, 35, 0.96),
+    rgba(46, 125, 50, 0.95)
+  );
+  color: white;
+  box-shadow: 0 24px 54px rgba(19, 58, 26, 0.24);
+}
+
+.cashier__hdr h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.2vw, 2.2rem);
+}
+
+.cashier__hdr p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+}
+
+.cashier__tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.cashier__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 1rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(82, 123, 75, 0.12);
+  background: white;
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--ec-ink);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.cashier__tab:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(42, 97, 47, 0.1);
+}
+
+.cashier__tab--on {
+  background: var(--ec-forest);
+  color: white;
+  border-color: transparent;
+}
+
+.cashier__main {
+  display: grid;
+  gap: 18px;
+  padding: 0;
+}
+
+.cashier__instr {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ec-ink-soft);
+  text-align: center;
+}
+
+.cashier__input {
+  width: 100%;
+  border: 1px solid rgba(81, 119, 76, 0.18);
+  border-radius: 18px;
+  padding: 18px 20px;
+  font-size: 1rem;
+  font-family: monospace;
+  text-align: center;
+}
+
+.cashier__btn {
+  width: 100%;
+  border-radius: 999px;
+  padding: 18px 22px;
+  font-size: 1.05rem;
+}
+
+.cashier__scanner {
+  min-height: 320px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(81, 122, 76, 0.18);
+  background: white;
+  box-shadow: inset 0 0 0 1px rgba(162, 196, 162, 0.14);
+}
+
+.cashier__error {
+  margin: 0;
+  color: var(--ec-danger);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .cashier__tabs {
+    grid-template-columns: 1fr;
+  }
+}

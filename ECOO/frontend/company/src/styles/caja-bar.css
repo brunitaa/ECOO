@@ -1,0 +1,44 @@
+.caja-hdr-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--ec-forest);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.caja-hdr-bar button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.caja-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--ec-pale);
+  border-bottom: 1px solid var(--ec-border);
+}
+
+.caja-tabs__btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--ec-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--ec-muted);
+}
+
+.caja-tabs__btn--on {
+  background: var(--ec-forest);
+  color: #fff;
+  border-color: var(--ec-forest);
+}

@@ -1,0 +1,30 @@
+.ec-chart-card__hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ec-chart-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ec-ink);
+  margin: 0;
+}
+
+.ec-chart-card__sub {
+  font-size: 0.75rem;
+  color: var(--ec-ink-soft);
+  margin: 0.2rem 0 0;
+}
+
+.ec-chart-card__body {
+  min-height: 200px;
+}
+
+.ec-chart-card .recharts-cartesian-grid-horizontal line,
+.ec-chart-card .recharts-cartesian-grid-vertical line {
+  stroke: var(--ec-border);
+}
