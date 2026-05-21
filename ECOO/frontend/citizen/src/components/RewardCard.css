@@ -1,97 +1,119 @@
 .reward-card {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+  display: grid;
+  /* El diseño base acomoda: [Icono] [Cuerpo con textos] */
+  grid-template-columns: auto 1fr;
+  gap: 16px;
   background: #fff;
-  border-radius: var(--radius-md);
-  padding: 12px;
-  border: 1px solid var(--ec-border);
-  transition: var(--transition);
-  animation: slideUp 0.35s ease;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--ec-border, #e0e0e0);
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .reward-card--featured {
-  border-color: var(--ec-coin);
+  border-color: var(--ec-coin, #fbbf24);
   border-width: 1.5px;
 }
 
 .reward-card--disabled {
-  opacity: 0.65;
+  opacity: 0.75;
 }
 
 .reward-card__icon {
+  grid-column: 1;
   width: 48px;
   height: 48px;
   border-radius: 10px;
-  background: var(--ec-pale);
-  border: 1px solid var(--ec-border);
+  background: var(--ec-pale, #f4f9f4);
+  border: 1px solid var(--ec-border, #e0e0e0);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  flex-shrink: 0;
 }
 
 .reward-card__body {
-  flex: 1;
-  min-width: 0;
+  grid-column: 2;
+  min-width: 0; /* Evita que los textos fuercen un desborde horizontal */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .reward-card__title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .reward-card__desc {
-  font-size: 0.75rem;
-  color: #888;
-  margin-bottom: 4px;
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .reward-card__meta {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  margin-top: 4px;
 }
 
 .reward-card__stock {
-  font-size: 0.7rem;
-  color: #aaa;
+  font-size: 0.75rem;
+  color: #888;
 }
 
 .reward-card__faltan {
-  font-size: 0.7rem;
-  color: #aaa;
-  margin-top: 4px;
+  font-size: 0.75rem;
+  color: #dc2626;
+  margin: 6px 0 0 0;
+  font-weight: 500;
 }
 
 .reward-card__bar {
-  height: 5px;
-  background: var(--ec-pale);
+  height: 6px;
+  background: var(--ec-pale, #f4f9f4);
   border-radius: 3px;
   overflow: hidden;
   margin-top: 4px;
-  max-width: 80%;
+  width: 100%;
+  max-width: 150px;
 }
 
 .reward-card__bar-fill {
   height: 100%;
-  background: var(--ec-forest);
+  background: var(--ec-forest, #1b4332);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
 
+/* UBICACIÓN CRÍTICA DEL BOTÓN: Ocupa toda la fila inferior */
 .reward-card__btn {
-  flex-shrink: 0;
-  background: var(--ec-forest);
+  grid-column: 1 / span 2; /* Cruza de lado a lado abajo */
+  width: 100%;
+  background: var(--ec-forest, #1b4332);
   color: #fff;
   border: none;
-  border-radius: 7px;
-  padding: 8px 12px;
-  font-size: 0.75rem;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+  height: 40px;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
 }
 
 .reward-card__btn:disabled {
@@ -101,5 +123,5 @@
 }
 
 .reward-card__btn:not(:disabled):hover {
-  background: var(--ec-mid);
+  background: var(--ec-mid, #2d6a4f);
 }
