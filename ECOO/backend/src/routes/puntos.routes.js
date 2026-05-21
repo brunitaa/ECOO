@@ -3,7 +3,7 @@ import prisma from '../config/prisma.js';
 import { AppError } from '../middleware/errorHandler.js';
 import { cargarReglaParaPunto, calcularRecompensaPorRegla } from '../utils/ecocoins.js';
 
-const WEB_BASE = process.env.WEB_CIUDADANO_URL || 'http://localhost:5173';
+const WEB_BASE = 'https://ecoo-citizen.onrender.com';
 
 const router = Router();
 
